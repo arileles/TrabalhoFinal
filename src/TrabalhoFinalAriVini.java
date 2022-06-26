@@ -70,63 +70,59 @@ public class TrabalhoFinalAriVini {
 
         public void mapaPesquisa(String[][] palavras,char[][] mapa) {
             for (int palavraAtual = 0; palavraAtual < palavras.length; palavraAtual++) {
-                int caracterAtual = 0;
+                int letraAtual = 0;
                 for (int l = 0; l < 10; l++) {
                     for (int i = 0; i < 5; i++) {
-                        if (mapa[l][i] == palavras[palavraAtual][0].charAt(caracterAtual)) {
-                            caracterAtual++;
-                            if (caracterAtual == palavras[palavraAtual][0].length()) {
-                                palavras[palavraAtual][1] = "[" + l + "," + (i - palavras[palavraAtual][0].length() + 1) +
-                                        "]";
-                                caracterAtual = 0;
+                        if (mapa[l][i] == palavras[palavraAtual][0].charAt(letraAtual)) {
+                            letraAtual++;
+                            if (letraAtual == palavras[palavraAtual][0].length()) {
+                                palavras[palavraAtual][1] = "[" + l + "," + (i - palavras[palavraAtual][0].length() + 1) + "]";
+                                letraAtual = 0;
                             }
                         } else {
-                            caracterAtual = 0;
+                            letraAtual = 0;
                         }
                     }
                 }
-                caracterAtual = 0;
+                letraAtual = 0;
                 for (int l = 0; l < 10; l++) {
                     for (int i = 5 - 1; i >= 0; i--) {
-                        if (mapa[l][i] == palavras[palavraAtual][0].charAt(caracterAtual)) {
-                            caracterAtual++;
-                            if (caracterAtual == palavras[palavraAtual][0].length()) {
-                                palavras[palavraAtual][1] = "[" + l + "," + (i + palavras[palavraAtual][0].length() - 1) +
-                                        "]";
-                                caracterAtual = 0;
+                        if (mapa[l][i] == palavras[palavraAtual][0].charAt(letraAtual)) {
+                            letraAtual++;
+                            if (letraAtual == palavras[palavraAtual][0].length()) {
+                                palavras[palavraAtual][1] = "[" + l + "," + (i + palavras[palavraAtual][0].length() - 1) + "]";
+                                letraAtual = 0;
                             }
                         } else {
-                            caracterAtual = 0;
+                            letraAtual = 0;
                         }
                     }
                 }
-                caracterAtual = 0;
+                letraAtual = 0;
                 for (int c = 0; c < 5; c++) {
                     for (int i = 0; i < 10; i++) {
-                        if (mapa[i][c] == palavras[palavraAtual][0].charAt(caracterAtual)) {
-                            caracterAtual++;
-                            if (caracterAtual == palavras[palavraAtual][0].length()) {
-                                palavras[palavraAtual][1] = "[" + (i - palavras[palavraAtual][0].length() + 1) + "," + c +
-                                        "]";
-                                caracterAtual = 0;
+                        if (mapa[i][c] == palavras[palavraAtual][0].charAt(letraAtual)) {
+                            letraAtual++;
+                            if (letraAtual == palavras[palavraAtual][0].length()) {
+                                palavras[palavraAtual][1] = "[" + (i - palavras[palavraAtual][0].length() + 1) + "," + c + "]";
+                                letraAtual = 0;
                             }
                         } else {
-                            caracterAtual = 0;
+                            letraAtual = 0;
                         }
                     }
                 }
-                caracterAtual = 0;
+                letraAtual = 0;
                 for (int c = 0; c < 5; c++) {
                     for (int i = 10 - 1; i >= 0; i--) {
-                        if (mapa[i][c] == palavras[palavraAtual][0].charAt(caracterAtual)) {
-                            caracterAtual++;
-                            if (caracterAtual == palavras[palavraAtual][0].length()) {
-                                palavras[palavraAtual][1] = "[" + (i + palavras[palavraAtual][0].length() - 1) + "," + c +
-                                        "]";
-                                caracterAtual = 0;
+                        if (mapa[i][c] == palavras[palavraAtual][0].charAt(letraAtual)) {
+                            letraAtual++;
+                            if (letraAtual == palavras[palavraAtual][0].length()) {
+                                palavras[palavraAtual][1] = "[" + (i + palavras[palavraAtual][0].length() - 1) + "," + c + "]";
+                                letraAtual = 0;
                             }
                         } else {
-                            caracterAtual = 0;
+                            letraAtual = 0;
                         }
                     }
                 }
