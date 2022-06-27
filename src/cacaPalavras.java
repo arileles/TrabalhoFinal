@@ -1,7 +1,7 @@
 import java.util.Scanner;
-public class TrabalhoFinalAriVini {
+public class cacaPalavras {
 
-        public TrabalhoFinalAriVini() {
+        public cacaPalavras() {
             Scanner teclado = new Scanner(System.in);
             String[][] palavras = new String[5][2];
             char[][] mapa = new char[10][5];
@@ -139,7 +139,7 @@ public class TrabalhoFinalAriVini {
         }
 
     public static void main(String[] args) {
-        new TrabalhoFinalAriVini();
+        new cacaPalavras();
     }
     }
 
