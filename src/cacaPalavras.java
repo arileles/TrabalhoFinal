@@ -53,7 +53,7 @@ public class cacaPalavras {
             palavras[3][0] = "OBJETO";
             palavras[4][0] = "VETOR";
         }
-
+//adiciona as palavras para fazer parte do caça
         private void mapaEntrada(char[][]mapa){
             mapa[ 0][ 0]='D';  mapa[ 0][ 1]='C';  mapa[ 0][ 2]='Q';  mapa[ 0][ 3]='W';  mapa[ 0][ 4]='E';
             mapa[ 1][ 0]='I';  mapa[ 1][ 1]='X';  mapa[ 1][ 2]='F';  mapa[ 1][ 3]='O';  mapa[ 1][ 4]='R';
@@ -66,17 +66,19 @@ public class cacaPalavras {
             mapa[ 8][ 0]='X';  mapa[ 8][ 1]='C';  mapa[ 8][ 2]='K';  mapa[ 8][ 3]='B';  mapa[ 8][ 4]='G';
             mapa[ 9][ 0]='V';  mapa[ 9][ 1]='E';  mapa[ 9][ 2]='T';  mapa[ 9][ 3]='O';  mapa[ 9][ 4]='R';
         }
+        //procura as palavras
 
 
         public void mapaPesquisa(String[][] palavras,char[][] mapa) {
             for (int palavraAtual = 0; palavraAtual < palavras.length; palavraAtual++) {
                 int letraAtual = 0;
-                for (int l = 0; l < 10; l++) {
+                //pesquisa a palavra na linha
+                for (int linhas = 0; linhas < 10; linhas++) {
                     for (int i = 0; i < 5; i++) {
-                        if (mapa[l][i] == palavras[palavraAtual][0].charAt(letraAtual)) {
+                        if (mapa[linhas][i] == palavras[palavraAtual][0].charAt(letraAtual)) {
                             letraAtual++;
                             if (letraAtual == palavras[palavraAtual][0].length()) {
-                                palavras[palavraAtual][1] = "[" + l + "," + (i - palavras[palavraAtual][0].length() + 1) + "]";
+                                palavras[palavraAtual][1] = "[" + linhas + "," + (i - palavras[palavraAtual][0].length() + 1) + "]";
                                 letraAtual = 0;
                             }
                         } else {
@@ -84,13 +86,14 @@ public class cacaPalavras {
                         }
                     }
                 }
+                //palavras na linha invertida
                 letraAtual = 0;
-                for (int l = 0; l < 10; l++) {
+                for (int linhaInver = 0; linhaInver < 10; linhaInver++) {
                     for (int i = 5 - 1; i >= 0; i--) {
-                        if (mapa[l][i] == palavras[palavraAtual][0].charAt(letraAtual)) {
+                        if (mapa[linhaInver][i] == palavras[palavraAtual][0].charAt(letraAtual)) {
                             letraAtual++;
                             if (letraAtual == palavras[palavraAtual][0].length()) {
-                                palavras[palavraAtual][1] = "[" + l + "," + (i + palavras[palavraAtual][0].length() - 1) + "]";
+                                palavras[palavraAtual][1] = "[" + linhaInver + "," + (i + palavras[palavraAtual][0].length() - 1) + "]";
                                 letraAtual = 0;
                             }
                         } else {
@@ -99,12 +102,12 @@ public class cacaPalavras {
                     }
                 }
                 letraAtual = 0;
-                for (int c = 0; c < 5; c++) {
+                for (int colunas = 0; colunas < 5; colunas++) {
                     for (int i = 0; i < 10; i++) {
-                        if (mapa[i][c] == palavras[palavraAtual][0].charAt(letraAtual)) {
+                        if (mapa[i][colunas] == palavras[palavraAtual][0].charAt(letraAtual)) {
                             letraAtual++;
                             if (letraAtual == palavras[palavraAtual][0].length()) {
-                                palavras[palavraAtual][1] = "[" + (i - palavras[palavraAtual][0].length() + 1) + "," + c + "]";
+                                palavras[palavraAtual][1] = "[" + (i - palavras[palavraAtual][0].length() + 1) + "," + colunas + "]";
                                 letraAtual = 0;
                             }
                         } else {
@@ -112,13 +115,15 @@ public class cacaPalavras {
                         }
                     }
                 }
+
+                //pesquisa a palavra na coluna invertida
                 letraAtual = 0;
-                for (int c = 0; c < 5; c++) {
+                for (int colunasinvert = 0; colunasinvert < 5; colunasinvert++) {
                     for (int i = 10 - 1; i >= 0; i--) {
-                        if (mapa[i][c] == palavras[palavraAtual][0].charAt(letraAtual)) {
+                        if (mapa[i][colunasinvert] == palavras[palavraAtual][0].charAt(letraAtual)) {
                             letraAtual++;
                             if (letraAtual == palavras[palavraAtual][0].length()) {
-                                palavras[palavraAtual][1] = "[" + (i + palavras[palavraAtual][0].length() - 1) + "," + c + "]";
+                                palavras[palavraAtual][1] = "[" + (i + palavras[palavraAtual][0].length() - 1) + "," + colunasinvert + "]";
                                 letraAtual = 0;
                             }
                         } else {
