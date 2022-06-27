@@ -27,13 +27,19 @@ public class cacaPalavras {
 
 
         }
+    private void palavrasImprimir(String[][] palavras){
+        System.out.println();
+        for (int i = 0; i < palavras.length; i++) {
+            System.out.println((i+1)+" : "+palavras[i][0]);
+        }
+    }
         public void palavrasRepostas(String[][] palavras) {
-            for (String[] strings : palavras) {
-                String palavra = strings[1];
-                if (strings[1] != null) {
-                    System.out.println(palavra + " : " + strings[0]);
+            for (String[] string : palavras) {
+                String resposta = string[1];
+                if (string[1] != null) {
+                    System.out.println(resposta + " : " + string[0]);
                 } else {
-                    System.out.println("Palavra não foi encontrada : " + strings[0]);
+                    System.out.println("Palavra não foi encontrada      : " + string[0]);
                 }
                 System.out.println("---------------------------------");
             }
@@ -61,12 +67,6 @@ public class cacaPalavras {
             mapa[ 9][ 0]='V';  mapa[ 9][ 1]='E';  mapa[ 9][ 2]='T';  mapa[ 9][ 3]='O';  mapa[ 9][ 4]='R';
         }
 
-        private void palavrasImprimir(String[][] palavras){
-            System.out.println();
-            for (int i = 0; i < palavras.length; i++) {
-                System.out.println((i+1)+" : "+palavras[i][0]);
-            }
-        }
 
         public void mapaPesquisa(String[][] palavras,char[][] mapa) {
             for (int palavraAtual = 0; palavraAtual < palavras.length; palavraAtual++) {
