@@ -39,9 +39,9 @@ public class cacaPalavras {
                 if (string[1] != null) {
                     System.out.println(resposta + " : " + string[0]);
                 } else {
-                    System.out.println("Palavra não foi encontrada      : " + string[0]);
+                    System.out.println("Palavra não foi encontrada  : " + string[0]);
                 }
-                System.out.println("---------------------------------");
+                System.out.println("/////////////");
             }
         }
 
